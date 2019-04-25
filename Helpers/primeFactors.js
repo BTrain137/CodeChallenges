@@ -1,4 +1,5 @@
 //http://tutorial.math.lamar.edu/Classes/Alg/Factoring.aspx
+//https://www.calculatorsoup.com/calculators/math/prime-factors.php
 /**
  * Find all prime factors of a number and return in array
  * 
