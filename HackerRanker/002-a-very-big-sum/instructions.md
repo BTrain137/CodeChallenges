@@ -33,5 +33,5 @@ Output
 ```
 Note:
 
-The range of the 32-bit integer is `(-2<sup>31</sup>) to (2<sup>31</sup> - 1) or [-2147483648, 2147483647]`.
+The range of the 32-bit integer is (-2<sup>31</sup>) to (2<sup>31</sup> - 1) or [-2147483648, 2147483647]`.
 When we add several integer values, the resulting sum might exceed the above range. You might need to use long long int in C/C++ or long data type in Java to store such sums.
