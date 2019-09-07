@@ -19,7 +19,7 @@
   "homepage": "https://github.com/bryan89tran/CodeChallenges#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.0.2"
+    "mocha": "^6.1.4"
   },
   "dependencies": {
     "jest": "^24.5.0"
