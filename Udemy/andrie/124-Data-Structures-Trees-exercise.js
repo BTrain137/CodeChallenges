@@ -14,26 +14,22 @@ class BinarySearchTree {
     const newNode = new Node(value);
     if (this.root === null) {
       this.root = newNode;
-    } 
-    else {
+    } else {
       let tempNode = this.root;
       let isInserted = false;
-      while(!isInserted) {
+      while (!isInserted) {
         if (tempNode.value > newNode.value) {
-          if(tempNode.left !== null) {
-            tempNode = tempNode.left
-          }
-          else {
+          if (tempNode.left !== null) {
+            tempNode = tempNode.left;
+          } else {
             tempNode.left = newNode;
             isInserted = true;
             return;
           }
-        }
-        else if (tempNode.value < newNode.value) {
-          if(tempNode.right !== null) {
-            tempNode = tempNode.right
-          }
-          else {
+        } else if (tempNode.value < newNode.value) {
+          if (tempNode.right !== null) {
+            tempNode = tempNode.right;
+          } else {
             tempNode.right = newNode;
             isInserted = true;
             return;
@@ -45,25 +41,44 @@ class BinarySearchTree {
   lookup(value) {
     let isFound = false;
     let tempNode = this.root;
-    while(!isFound) {
-      if(!tempNode) {
+    while (!isFound) {
+      if (!tempNode) {
         isFound = true;
         return null;
-      }
-      else if (tempNode.value === value) {
+      } else if (tempNode.value === value) {
         isFound = true;
         return tempNode;
-      }
-      else if (tempNode.value > value) {
+      } else if (tempNode.value > value) {
         tempNode = tempNode.left;
-      }
-      else if(tempNode.value < value) {
+      } else if (tempNode.value < value) {
         tempNode = tempNode.right;
       }
     }
   }
-  remove() {
-    this.root = null;
+  remove(value) {
+    let tempNode = this.root;
+    let previousNode = null;
+    while (tempNode) {
+      if (value > tempNode.value) {
+        previousNode = tempNode;
+        tempNode = tempNode.right;
+      } else if (value < tempNode.value) {
+        previousNode = tempNode;
+        tempNode = tempNode.left;
+      } else {
+        if (tempNode.right === null) {
+          if(previousNode === null) {
+            this.root = tempNode.left;
+          } 
+          else {
+            previousNode.left = tempNode.left;
+          }
+        } else if (tempNode.left === null) {
+        }
+
+        return;
+      }
+    }
   }
 }
 
@@ -75,10 +90,11 @@ tree.insert(20);
 tree.insert(170);
 tree.insert(15);
 tree.insert(1);
-console.log(JSON.parse(JSON.stringify(traverse(tree.root))));
-console.log(tree.lookup(170));
-console.log(tree.lookup(20));
-
+console.log(JSON.stringify(traverse(tree.root)));
+// console.log(tree.lookup(170));
+// console.log(tree.lookup(20));
+// console.log(tree.lookup(22));
+console.log()
 
 //     9
 //  4     20
