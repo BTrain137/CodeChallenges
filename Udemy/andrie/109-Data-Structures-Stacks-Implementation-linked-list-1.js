@@ -28,7 +28,13 @@ class Stack {
   }
   pop() {
     const tempNode = this.top;
-    this.top = this.top.next;
+    if(this.length === 1) {
+      this.top = null;
+      this.bottom = null;
+    } 
+    else {
+      this.top = this.top.next;
+    }
     this.length--;
     return tempNode.value;
   }
@@ -41,6 +47,8 @@ myStack.push("Udemy");
 myStack.push("Discord");
 console.log(myStack.pop());
 console.log(myStack.peek());
+console.log(myStack.pop());
+console.log(myStack.pop());
 console.log(myStack);
 
 //Discord
