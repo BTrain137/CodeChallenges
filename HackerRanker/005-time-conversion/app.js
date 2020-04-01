@@ -10,11 +10,4 @@ const timeConversion = function(s) {
   return `${parseHr}:${minute}:${second}`;
 };
 
-console.log(timeConversion("07:05:45PM")); // 19:05:45
-console.log(timeConversion("07:05:45AM")); // 07:05:45
-console.log(timeConversion("01:05:45PM")); // 13:05:45
-
-console.log(timeConversion("12:05:45PM")); // 12:05:45
-console.log(timeConversion("12:05:45AM")); // 00:05:45
-
 module.exports = timeConversion;
