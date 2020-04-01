@@ -1,9 +1,10 @@
 const kprimesStep = require("./app");
+const expect = require("chai").expect;
 
 function testing(k, step, start, nd, expected) {
     console.log(+k + " " + +step + " " + +start + " " + +nd + "\n")
     let ans = kprimesStep(k, step, start, nd);
-    expect(ans).toEqual(expected);
+    expect(ans).equal(expected);
 }
 
 describe("kprimesStep", function () {
